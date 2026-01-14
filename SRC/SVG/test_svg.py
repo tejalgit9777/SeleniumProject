@@ -23,6 +23,11 @@ def test_svg():
         #time.sleep(2)
         if "Maharashtra  " in state.get_attribute("aria-label"):
             state.click()
+
+            # To verify state name, tooltip
+            tooltip_text = state.get_attribute("aria-label")
+            assert "Maharashtra" in tooltip_text
+            print("Tooltip verified:", tooltip_text)
             break
 
     time.sleep(5)
