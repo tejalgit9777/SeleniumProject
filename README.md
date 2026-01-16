@@ -58,7 +58,7 @@ selenium-python-automation/
 │   │
 │   ├── windows_iframes/
 │   │   ├── test_windows.py
-│   │   ├── test_iframe.py
+│   │   ├── test_multiple_browser_tabs.py
 │   │
 │   ├── alerts/
 │   │   ├── test_js_alerts.py

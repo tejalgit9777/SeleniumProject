@@ -4,9 +4,13 @@ from selenium import webdriver
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common import window
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+
 
 def test_multiple_browser_tabs():
-    driver = webdriver.Chrome()
+    chrome_options = Options()
+    chrome_options.add_argument("--incognito")
+    driver = webdriver.Chrome(chrome_options)
     driver.maximize_window()
     driver.get("https://the-internet.herokuapp.com/windows")
     time.sleep(2)
