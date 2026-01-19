@@ -1,13 +1,14 @@
-#https://selectorshub.com/xpath-practice-page/
+# https://selectorshub.com/xpath-practice-page/
 import time
 from selenium import webdriver
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common import window
 from selenium.webdriver.common.by import By
 
+
 def test_shadow_dom():
-    #driver = webdriver.Edge()
-    #driver = webdriver.Firefox()
+    # driver = webdriver.Edge()
+    # driver = webdriver.Firefox()
     driver = webdriver.Chrome()
     driver.maximize_window()
     driver.get("https://selectorshub.com/xpath-practice-page/")
@@ -17,15 +18,15 @@ def test_shadow_dom():
     driver.execute_script("arguments[0].scrollIntoView(true);", shadow_dom_element)
     time.sleep(2)
 
-    kills_input = driver.execute_script("return    document.querySelector('div#userName').shadowRoot.querySelector('input#kils')")
+    kills_input = driver.execute_script(
+        "return    document.querySelector('div#userName').shadowRoot.querySelector('input#kils')")
     kills_input.send_keys("Test Username")
     time.sleep(2)
 
-    pizza_input = driver.execute_script("return    document.querySelector('div#userName').shadowRoot.querySelector('#app2').shadowRoot.querySelector('#pizza');")
+    pizza_input = driver.execute_script(
+        "return    document.querySelector('div#userName').shadowRoot.querySelector('#app2').shadowRoot.querySelector('#pizza');")
     pizza_input.send_keys("Test Pizza")
     time.sleep(2)
-
-
 
 
     # # 1. Locate the shadow host element
